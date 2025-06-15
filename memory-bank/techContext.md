@@ -9,8 +9,7 @@
     *   CSS3 with Materialize CSS framework.
     *   Vanilla JavaScript (ES6+) for DOM manipulation and API calls.
     *   `marked.js` for Markdown rendering.
-*   **LLM:** Google Gemini 1.5 Pro (accessed via API).
-    *   **Note:** The specific model name (`gemini-1.5-pro-latest`) was critical for functionality, as older models were not found.
+*   **LLM:** Google Gemini(accessed via API).
 *   **Problem Data Source:** LeetCode GraphQL API.
     *   `requests`: For making POST requests to the GraphQL endpoint.
     *   `BeautifulSoup4`: Used minimally to parse HTML embedded in the GraphQL JSON response.
