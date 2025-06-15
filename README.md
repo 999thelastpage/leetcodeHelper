@@ -1,3 +1,6 @@
+
+![Screenshot 2025-06-15 175837](https://github.com/user-attachments/assets/aebcddee-cb4f-4725-a84a-ac05ae7faa65)
+
 # LeetCode Problem Analyzer & Tutor
 
 This web application serves as an AI-powered tutor to help users analyze and understand LeetCode problems. By providing a LeetCode problem URL, users can get a detailed analysis, multi-language solutions, curated learning resources, and suggestions for similar problems. The application also features an interactive chat to discuss the problem with an LLM.
