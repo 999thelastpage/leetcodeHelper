@@ -4,7 +4,6 @@
 
 The system follows a client-server architecture. The key change is the move from a single backend analysis endpoint to a **parallel, multi-endpoint architecture**. The frontend first scrapes the problem data and then makes multiple, concurrent requests to the backend for each piece of the analysis.
 
-```mermaid
 graph TD
     subgraph "User Interaction"
         User[User] --> FE[Frontend UI]
