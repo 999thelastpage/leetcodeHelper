@@ -4,15 +4,17 @@
 
 The system follows a client-server architecture. The key change is the move from a single backend analysis endpoint to a **parallel, multi-endpoint architecture**. The frontend first scrapes the problem data and then makes multiple, concurrent requests to the backend for each piece of the analysis.
 
-graph TD
-    %% Define external services clearly first
-    subgraph "External Services"
-        LC_API["LeetCode GraphQL API"]
-        LLM_API["Gemini LLM API"]
-    end
+    graph TD
+        %% Define external services clearly first
+        subgraph "External Services"
+            LC_API["LeetCode GraphQL API"]
+            LLM_API["Gemini LLM API"]
+        end
+
     subgraph "User Interaction"
         User[User] --> FE[Frontend UI]
     end
+
     subgraph "Application Services"
         %% Define API Endpoints
         ScrapeEP[/api/scrape/]
@@ -22,11 +24,13 @@ graph TD
         ResourcesEP[/api/resources/]
         SimilarEP[/api/similar-problems/]
         ChatEP[/api/chat/]
+
         %% Scrape Flow
         FE -->|1. Scrape Request URL| ScrapeEP
         ScrapeEP -->|Queries| LC_API
         LC_API -->|Problem Data| ScrapeEP
         ScrapeEP -->|Problem Data| FE
+
         %% Parallel LLM Calls Flow
         %% Requests from FE
         FE -->|2a. Analysis Request| AnalysisEP
@@ -35,6 +39,7 @@ graph TD
         FE -->|2d. Resources Request| ResourcesEP
         FE -->|2e. Similar Problems Request| SimilarEP
         FE -->|2f. Chat Request| ChatEP
+
         %% Calls from Endpoints to LLM API
         AnalysisEP -->|Request| LLM_API
         ExplanationEP -->|Request| LLM_API
@@ -42,6 +47,7 @@ graph TD
         ResourcesEP -->|Request| LLM_API
         SimilarEP -->|Request| LLM_API
         ChatEP -->|Request| LLM_API
+
         %% Responses from Endpoints back to FE
         AnalysisEP -->|Analysis Data| FE
         ExplanationEP -->|Explanation Data| FE
@@ -49,7 +55,9 @@ graph TD
         ResourcesEP -->|Resources Data| FE
         SimilarEP -->|Similar Problems Data| FE
         ChatEP -->|Chat Data| FE
+
     end
+
 
 ## 2. Key Components and Responsibilities
 
