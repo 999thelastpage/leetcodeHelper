@@ -129,7 +129,9 @@ pre {
 
 
 code {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 /* Floating Chat Widget */

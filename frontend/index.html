@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <nav>
@@ -37,110 +38,120 @@
         </div>
 
         <div id="results_container" class="row" style="display: none;">
-            <!-- Problem Analysis -->
             <div class="col s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Problem Analysis<i class="material-icons right retry-icon" data-endpoint="analysis">refresh</i></span>
-                        <div class="loader center-align"></div>
-                        <div id="analysis_content"></div>
-                    </div>
-                </div>
+                <ul class="tabs">
+                    <li class="tab col s2"><a href="#analysis_section">Problem Analysis</a></li>
+                    <li class="tab col s2"><a href="#explanation_section">Detailed Explanation</a></li>
+                    <li class="tab col s2"><a href="#solutions_section">Solutions</a></li>
+                    <li class="tab col s2"><a href="#resources_section">Resources</a></li>
+                    <li class="tab col s2"><a href="#similar_problems_section">Similar Problems</a></li>
+                </ul>
             </div>
 
-            <!-- Detailed Explanation -->
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Detailed Explanation<i class="material-icons right retry-icon" data-endpoint="explanation">refresh</i></span>
-                        <div class="loader center-align"></div>
-                        <div id="explanation_content"></div>
+            <div id="main_content">
+                <!-- Problem Analysis -->
+                <div id="analysis_section" class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Problem Analysis<i class="material-icons right retry-icon" data-endpoint="analysis">refresh</i></span>
+                            <div class="loader center-align"></div>
+                            <div id="analysis_content"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Solutions with Tabs -->
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Solutions<i class="material-icons right retry-icon" data-endpoint="solutions">refresh</i></span>
-                        <div class="loader center-align"></div>
-                        <div class="row">
-                            <div class="col s12">
-                                <ul class="tabs">
-                                    <li class="tab col s4"><a class="active" href="#solution_python">Python</a></li>
-                                    <li class="tab col s4"><a href="#solution_java">Java</a></li>
-                                    <li class="tab col s4"><a href="#solution_cpp">C++</a></li>
-                                </ul>
+                <!-- Detailed Explanation -->
+                <div id="explanation_section" class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Detailed Explanation<i class="material-icons right retry-icon" data-endpoint="explanation">refresh</i></span>
+                            <div class="loader center-align"></div>
+                            <div id="explanation_content"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solutions with Tabs -->
+                <div id="solutions_section" class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Solutions<i class="material-icons right retry-icon" data-endpoint="solutions">refresh</i></span>
+                            <div class="loader center-align"></div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <ul class="tabs">
+                                        <li class="tab col s4"><a class="active" href="#solution_python">Python</a></li>
+                                        <li class="tab col s4"><a href="#solution_java">Java</a></li>
+                                        <li class="tab col s4"><a href="#solution_cpp">C++</a></li>
+                                    </ul>
+                                </div>
+                                <div id="solution_python" class="col s12"><pre><code class="language-python" id="solution_content_python"></code></pre></div>
+                                <div id="solution_java" class="col s12"><pre><code class="language-java" id="solution_content_java"></code></pre></div>
+                                <div id="solution_cpp" class="col s12"><pre><code class="language-cpp" id="solution_content_cpp"></code></pre></div>
                             </div>
-                            <div id="solution_python" class="col s12"><pre><code class="language-python" id="solution_content_python"></code></pre></div>
-                            <div id="solution_java" class="col s12"><pre><code class="language-java" id="solution_content_java"></code></pre></div>
-                            <div id="solution_cpp" class="col s12"><pre><code class="language-cpp" id="solution_content_cpp"></code></pre></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Resources -->
+                <div id="resources_section" class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Resources<i class="material-icons right retry-icon" data-endpoint="resources">refresh</i></span>
+                            <div class="loader center-align"></div>
+                            <div id="resources_list" class="collection"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Problems with Tabs -->
+                <div id="similar_problems_section" class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Similar Problems<i class="material-icons right retry-icon" data-endpoint="similar-problems">refresh</i></span>
+                            <div class="loader center-align"></div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <ul class="tabs">
+                                        <li class="tab col s4"><a class="active" href="#easy_problems_tab">Easy</a></li>
+                                        <li class="tab col s4"><a href="#medium_problems_tab">Medium</a></li>
+                                        <li class="tab col s4"><a href="#hard_problems_tab">Hard</a></li>
+                                    </ul>
+                                </div>
+                                <div id="easy_problems_tab" class="col s12 collection"></div>
+                                <div id="medium_problems_tab" class="col s12 collection"></div>
+                                <div id="hard_problems_tab" class="col s12 collection"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Additional Resources -->
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Resources<i class="material-icons right retry-icon" data-endpoint="resources">refresh</i></span>
-                        <div class="loader center-align"></div>
-                        <div id="resources_list" class="collection"></div>
-                    </div>
+        <!-- Floating Chat Window -->
+        <div id="chat_widget" class="chat-widget">
+            <div class="chat-header">
+                <span class="chat-title">Chat with Tutor</span>
+                <div>
+                    <button id="maximize_chat" class="btn-flat waves-effect waves-light" style="display: none;">&#x26F6;</button>
+                    <button id="minimize_chat" class="btn-flat waves-effect waves-light">-</button>
                 </div>
             </div>
-
-            <!-- Similar Problems with Tabs -->
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Similar Problems<i class="material-icons right retry-icon" data-endpoint="similar-problems">refresh</i></span>
-                        <div class="loader center-align"></div>
-                        <div class="row">
-                            <div class="col s12">
-                                <ul class="tabs">
-                                    <li class="tab col s4"><a class="active" href="#easy_problems_tab">Easy</a></li>
-                                    <li class="tab col s4"><a href="#medium_problems_tab">Medium</a></li>
-                                    <li class="tab col s4"><a href="#hard_problems_tab">Hard</a></li>
-                                </ul>
-                            </div>
-                            <div id="easy_problems_tab" class="col s12 collection"></div>
-                            <div id="medium_problems_tab" class="col s12 collection"></div>
-                            <div id="hard_problems_tab" class="col s12 collection"></div>
-                        </div>
-                    </div>
+            <div id="chat_container" class="chat-container">
+                <div id="chat_history" class="chat-box"></div>
+                <div id="chat_loading" class="chat-loading" style="display: none;">
+                    <div class="dot-flashing"></div>
+                </div>
+                <div class="input-field">
+                    <input id="chat_input" type="text" placeholder="Ask a question...">
+                    <button id="chat_send_button" class="btn-floating waves-effect waves-light teal"><i class="material-icons">send</i></button>
                 </div>
             </div>
-
         </div>
-    </div>
 
-    <!-- Floating Chat Window -->
-    <div id="chat_widget" class="chat-widget">
-        <div class="chat-header">
-            <span class="chat-title">Chat with Tutor</span>
-            <div>
-                <button id="maximize_chat" class="btn-flat waves-effect waves-light" style="display: none;">&#x26F6;</button>
-                <button id="minimize_chat" class="btn-flat waves-effect waves-light">-</button>
-            </div>
-        </div>
-        <div id="chat_container" class="chat-container">
-            <div id="chat_history" class="chat-box"></div>
-            <div id="chat_loading" class="chat-loading" style="display: none;">
-                <div class="dot-flashing"></div>
-            </div>
-            <div class="input-field">
-                <input id="chat_input" type="text" placeholder="Ask a question...">
-                <button id="chat_send_button" class="btn-floating waves-effect waves-light teal"><i class="material-icons">send</i></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
-</body>
+        <!-- Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- Custom JavaScript -->
+        <script src="script.js"></script>
+    </body>
 </html>

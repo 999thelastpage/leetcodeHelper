@@ -247,20 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatExplanation(text) {
-        // Bolderize titles like **Pattern Analysis**:
-        let html = text.replace(/\*\*(.*?)\*\*:/g, '<h6>$1</h6>');
-
-        // Split into paragraphs and lists
-        const blocks = html.split('\n\n');
-        html = blocks.map(block => {
-            if (block.trim().startsWith('- ')) {
-                const items = block.split('\n').map(item => `<li>${item.substring(2)}</li>`).join('');
-                return `<ul>${items}</ul>`;
-            }
-            return `<p>${block.replace(/\n/g, '<br>')}</p>`;
-        }).join('');
-
-        return html;
+        return marked.parse(text);
     }
 
     // --- Chat Handlers ---
@@ -330,4 +317,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.chat-header').addEventListener('dblclick', () => {
         chatWidget.classList.toggle('maximized');
     });
+const mainTabs = document.querySelector('#results_container .tabs');
+    M.Tabs.init(mainTabs);
 });
