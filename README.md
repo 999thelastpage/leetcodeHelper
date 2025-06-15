@@ -19,7 +19,7 @@ This web application serves as an AI-powered tutor to help users analyze and und
 
 *   **Backend:** Python 3.9+ with FastAPI
 *   **Frontend:** Vanilla HTML, Materialize CSS, and JavaScript
-*   **LLM:** Google Gemini 1.5 Pro
+*   **LLM:** Google Gemini
 *   **Data Source:** LeetCode's Public GraphQL API
 
 ## Setup and Installation
