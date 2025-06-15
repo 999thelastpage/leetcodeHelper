@@ -8,6 +8,7 @@
     *   HTML5
     *   CSS3 with Materialize CSS framework.
     *   Vanilla JavaScript (ES6+) for DOM manipulation and API calls.
+    *   `marked.js` for Markdown rendering.
 *   **LLM:** Google Gemini 1.5 Pro (accessed via API).
     *   **Note:** The specific model name (`gemini-1.5-pro-latest`) was critical for functionality, as older models were not found.
 *   **Problem Data Source:** LeetCode GraphQL API.
@@ -34,6 +35,7 @@
 *   **Output Variability & Prompt Engineering:** This remains a key challenge. The monolithic prompt has been broken down into smaller, more focused prompts for each API endpoint. This improves reliability but still requires careful engineering to ensure the LLM returns valid JSON that matches the Pydantic models for each specific section. A robust JSON parsing function was added to the backend to handle minor LLM inconsistencies.
 *   **Caching (Updated):** The file-based LLM cache (`llm_cache.json`) has been **removed**. It has been replaced by a simple, in-memory dictionary in `main.py` that caches only the data from the `/api/scrape` endpoint for the duration of the server session. This prevents redundant calls to the LeetCode GraphQL API.
 *   **Security:** The primary security concern is protecting the LLM API key in the `.env` file, which is handled by `.gitignore`.
+*   **Chat Widget Handling:** Dynamic JavaScript is used to manage the chat widget's size and interactivity.
 
 ## 4. Key Dependencies (Final `requirements.txt` for backend)
 

@@ -174,13 +174,15 @@ code {
 
 .chat-widget.maximized {
     width: 90vw;
-    height: 90vh;
+    height: auto;
     max-width: 1200px;
     max-height: 800px;
 }
 
 .chat-widget.maximized .chat-box {
-    height: calc(100% - 80px); /* Adjust based on input field height */
+    /* height: calc(100% - 80px); Adjust based on input field height */
+    overflow-y: auto; /* Ensure scrollbar is visible */
+    height: 40rem;
 }
 
 .chat-loading {

@@ -37,3 +37,7 @@ The web application must:
 
 *   **Initial Focus:** Core features as listed above.
 *   **Future Enhancements (Out of initial scope):** User accounts, progress tracking, code execution/testing, support for multiple LLMs.
+
+## 6. Recent Updates
+
+*   **UI Improvements:** Implemented a tabbed interface for the main content sections, improved formatting of the detailed explanation and chat window using Markdown, and fixed layout and interactivity issues with the chat widget.

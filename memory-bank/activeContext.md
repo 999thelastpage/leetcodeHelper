@@ -4,7 +4,7 @@
 
 *   **Phase:** UI Refinement.
 *   **Objective:** Improve the user interface by implementing a tabbed layout for the "Solutions" and "Similar Problems" sections and fixing various styling issues.
-*   **Current Activity:** Finalizing the memory bank update after successfully implementing the new UI.
+*   **Current Activity:** Finalizing the memory bank update after successfully implementing the new UI and resolving chat widget issues.
 
 ## 2. Recent Changes & Accomplishments
 
@@ -15,14 +15,18 @@
     *   Added comprehensive exception logging with stack traces to all backend endpoints in `main.py`.
     *   Made the Gemini model name configurable via the `.env` file.
 *   **Frontend UI Refinements (Successful):**
-    *   **Implemented Tabbed Interface:** Added a Materialize tabbed layout for the "Solutions" and "Similar Problems" sections in `frontend/index.html`.
+    *   **Implemented Tabbed Interface:** Added a Materialize tabbed layout for the main content sections ("Problem Analysis", "Detailed Explanation", "Solutions", "Resources", "Similar Problems") in `frontend/index.html`.
+    *   **Improved Detailed Explanation Formatting:** Integrated the `marked` library to render Markdown content in the "Detailed Explanation" section in `frontend/script.js` and `frontend/index.html`.
+    *   **Enhanced Chat Window Formatting:** Added Markdown formatting to the chat window by using the `marked` library to render LLM responses in `frontend/script.js`.
+    *   **Expanded Sections:** Modified `frontend/index.html` to allow the "Resources" and "Similar Problems" sections to take up the full width of the screen.
+    *   **Fixed Chat Widget Interactivity:** Resolved the issue where the chat widget became unresponsive when expanded by dynamically controlling the `height` and `overflow` properties using JavaScript in `frontend/script.js` and adjusting the CSS in `frontend/style.css`.
+    *   **Removed Blank Space:** Removed the excessive blank space at the bottom of the chat widget when expanded by setting `height: auto` and `max-height: 800px` in `.chat-widget.maximized` in `frontend/style.css`.
     *   **Corrected DOM Manipulation Logic:** Fixed a critical bug in `frontend/script.js` where the parent container's `innerHTML` was being cleared, which detached the child elements from the DOM before they could be populated.
     *   **Fixed Styling Issues:** Resolved various styling issues in `frontend/style.css`, including removing extra borders and fixing a scrollbar issue.
 
 ## 3. Next Steps
 
-1.  **Finalize Memory Bank Update:** Complete the review and update of all memory bank files.
-2.  **Address Git Repository Corruption:** Resolve the corrupted `.git` directory issue.
+1.  **Address Git Repository Corruption:** Resolve the corrupted `.git` directory issue.
 
 ## 4. Active Decisions & Considerations
 

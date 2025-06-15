@@ -41,3 +41,7 @@ The "LeetCode Problem Analyzer & Tutor" web application aims to address these ch
 *   **Responsive and Engaging Chat:** The floating chat widget should be intuitive and easy to use.
 *   **Trustworthy and Accurate Content:** Users should feel confident in the accuracy of the solutions and the quality of the recommended resources.
 *   **Performance:** The application should feel responsive, aided by the caching of LLM responses.
+
+## 6. Recent Updates
+
+*   **UI Improvements:** Implemented a tabbed interface for the main content sections, improved formatting of the detailed explanation and chat window using Markdown, and fixed layout and interactivity issues with the chat widget.

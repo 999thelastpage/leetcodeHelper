@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageWrapper.className = sender === 'user' ? 'user-message' : 'llm-message';
         const messageBubble = document.createElement('div');
         messageBubble.className = 'message-bubble';
-        messageBubble.textContent = message;
+        messageBubble.innerHTML = sender === 'llm' ? marked.parse(message) : message;
         messageWrapper.appendChild(messageBubble);
         chatHistory.appendChild(messageWrapper);
         chatHistory.scrollTop = chatHistory.scrollHeight;
@@ -303,6 +303,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Chat Widget UI Handlers ---
     minimizeChatButton.addEventListener('click', () => {
         chatContainer.style.display = 'none';
+        chatContainer.style.height = ''; // Reset height
+        chatHistory.style.overflowY = ''; // Reset overflow
         minimizeChatButton.style.display = 'none';
         maximizeChatButton.style.display = 'inline-block';
         chatWidget.classList.remove('maximized');
@@ -310,6 +312,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     maximizeChatButton.addEventListener('click', () => {
         chatContainer.style.display = 'flex';
+        chatContainer.style.height = 'auto'; // Let content determine height
+        chatHistory.style.overflowY = 'auto'; // Enable scrolling
         minimizeChatButton.style.display = 'inline-block';
         maximizeChatButton.style.display = 'none';
     });

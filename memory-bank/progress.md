@@ -2,13 +2,14 @@
 
 ## 1. Current Project Status
 
-*   **Overall Status:** Architecturally Refactored.
-*   **Current Milestone:** The application has been significantly refactored from a monolithic backend to a parallel, lazy-loading architecture. The core functionality is in place, but there are known issues to be addressed. The Memory Bank is now up-to-date with the new design.
+*   **Overall Status:** UI Refined and Chat Widget Stabilized.
+*   **Current Milestone:** The application's UI has been refined with a tabbed layout and the chat widget's interactivity and layout issues have been resolved. The memory bank is being updated to reflect these changes.
 
 ## 2. What Works (Actual)
 
 *   **Stable Backend:** The backend is robust. It correctly scrapes data, calls the LLM, caches the results, and serves the data through its API endpoints. Extensive logging and testing have confirmed its stability.
-*   **Partial Frontend Rendering:** The "Problem Analysis", "Detailed Explanation", and "Resources" sections render correctly on the frontend.
+*   **Complete Frontend Rendering:** All sections, including "Problem Analysis", "Detailed Explanation", "Resources", and "Similar Problems", render correctly on the frontend with improved formatting.
+*   **Interactive Chat Widget:** The chat widget is now fully interactive and displays Markdown-formatted responses from the LLM.
 *   **Data Flow:** The frontend correctly receives data for all sections from the backend. This has been verified with console logs.
 
 ## 3. What's Left to Build (Current Known Issues)
@@ -29,6 +30,10 @@
 *   **Caching Strategy:**
     *   **Initial:** File-based cache for the entire LLM response.
     *   **Current:** Removed the LLM cache and implemented a simple in-memory cache for the scraping endpoint only. This was a temporary measure during the refactor and is noted as a key issue to address.
+*   **UI and Chat Widget Improvements:**
+    *   Implemented a tabbed interface for the main content sections.
+    *   Integrated the `marked` library to render Markdown content in the "Detailed Explanation" section and the chat window.
+    *   Fixed layout and interactivity issues with the chat widget.
 *   **Error Handling & Debugging:**
     *   Fixed multiple Python path and dependency issues (`ModuleNotFoundError`, Pydantic `TypeError`).
     *   Made backend prompts significantly more explicit to ensure valid JSON.
