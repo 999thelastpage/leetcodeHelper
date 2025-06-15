@@ -67,9 +67,11 @@ You need to provide your Google Gemini API key.
 
     ```
     GEMINI_API_KEY="YOUR_API_KEY_HERE"
+    GEMINI_MODEL_NAME="gemini-2.0-flash"
     ```
 
     Replace `"YOUR_API_KEY_HERE"` with your actual Gemini API key.
+    Replace `"gemini-2.0-flash"` with your choice of Gemini model.
 
 ## How to Run the Application
 
