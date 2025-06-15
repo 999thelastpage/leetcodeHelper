@@ -1,0 +1,58 @@
+{
+    "easy": [
+        {
+            "title": "167. Two Sum II - Input Array Is Sorted",
+            "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+            "reason": "This is a direct variation where the input array is sorted. It's excellent practice for learning the two-pointer technique, which is an alternative and highly efficient approach when data is ordered, contrasting with the hash map solution for the original problem."
+        },
+        {
+            "title": "170. Two Sum III - Data structure design",
+            "url": "https://leetcode.com/problems/two-sum-iii-data-structure-design/",
+            "reason": "This problem abstracts the core logic into a class with `add` and `find` methods. It forces you to think about the trade-offs of storing data for frequent lookups, solidifying your understanding of why a hash map is effective for the 'find' operation."
+        },
+        {
+            "title": "560. Subarray Sum Equals K",
+            "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+            "reason": "A perfect 'next-step' problem. It extends the 'complement' idea from finding `target - x` to finding subarrays. You use a hash map to store prefix sums, and for each new sum, you look up `current_sum - k`. It's a crucial pattern for many array problems."
+        }
+    ],
+    "medium": [
+        {
+            "title": "15. 3Sum",
+            "url": "https://leetcode.com/problems/3sum/",
+            "reason": "The natural and essential extension of Two Sum. It teaches you how to reduce a problem by one dimension (fixing one number and finding two others) and introduces the common pattern of sorting combined with the two-pointer technique to efficiently find pairs and handle duplicates."
+        },
+        {
+            "title": "16. 3Sum Closest",
+            "url": "https://leetcode.com/problems/3sum-closest/",
+            "reason": "A close sibling of 3Sum, this problem shifts the goal from finding an exact match to finding the best possible match. It builds directly on the 3Sum two-pointer approach but adds the logic of tracking and updating the 'closest' sum found so far."
+        },
+        {
+            "title": "653. Two Sum IV - Input is a BST",
+            "url": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/",
+            "reason": "This problem tests your ability to apply the Two Sum pattern to a different data structure. It requires combining tree traversal (like DFS or BFS) with a hash set to keep track of visited nodes, checking if a complement exists."
+        },
+        {
+            "title": "523. Continuous Subarray Sum",
+            "url": "https://leetcode.com/problems/continuous-subarray-sum/",
+            "reason": "A clever variation on 'Subarray Sum Equals K'. It requires using modular arithmetic within the prefix sum and hash map pattern. This demonstrates the versatility of the hash map technique for solving problems with different mathematical constraints, not just exact sums."
+        }
+    ],
+    "hard": [
+        {
+            "title": "18. 4Sum",
+            "url": "https://leetcode.com/problems/4sum/",
+            "reason": "This problem generalizes the K-Sum problem further. A common solution involves reducing it to a 3Sum problem, reinforcing the pattern of recursive reduction. It's a great exercise in managing complexity, nested loops, and duplicate handling."
+        },
+        {
+            "title": "454. 4Sum II",
+            "url": "https://leetcode.com/problems/4sum-ii/",
+            "reason": "A different and highly instructive take on 4Sum. Instead of one array, you have four. The optimal solution uses a hash map to store all sums from the first two arrays, and then iterates through the last two, looking for the complement. This 'meet-in-the-middle' approach is a powerful hash map strategy."
+        },
+        {
+            "title": "992. Subarrays with K Different Integers",
+            "url": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+            "reason": "An advanced sliding window problem that relies heavily on hash maps to track element counts. The solution often involves the insight that `count(exactly K) = count(at most K) - count(at most K-1)`, pushing your problem-solving and hash map skills to their limit."
+        }
+    ]
+}

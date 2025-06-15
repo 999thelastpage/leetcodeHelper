@@ -1,0 +1,53 @@
+{
+    "easy": [
+        {
+            "title": "Reverse Integer",
+            "url": "https://leetcode.com/problems/reverse-integer/",
+            "reason": "Focuses on the crucial integer overflow/underflow detection logic, which is a key component of `atoi`, but in a simpler context of reversing digits instead of parsing a string."
+        },
+        {
+            "title": "Valid Palindrome",
+            "url": "https://leetcode.com/problems/valid-palindrome/",
+            "reason": "Involves string processing where you must ignore certain characters and handle case sensitivity, similar to how `atoi` requires ignoring whitespace and handling signs. It's good practice for selective string parsing."
+        },
+        {
+            "title": "Palindrome Number",
+            "url": "https://leetcode.com/problems/palindrome-number/",
+            "reason": "A good warm-up for number manipulation. It involves extracting and working with individual digits of a number, a skill helpful in problems like `atoi` and `Reverse Integer`."
+        }
+    ],
+    "medium": [
+        {
+            "title": "Integer to Roman",
+            "url": "https://leetcode.com/problems/integer-to-roman/",
+            "reason": "It's the inverse of `atoi`: converting an integer to a string representation based on a specific set of rules. This helps in understanding the relationship between numeric values and their string forms."
+        },
+        {
+            "title": "Validate IP Address",
+            "url": "https://leetcode.com/problems/validate-ip-address/",
+            "reason": "A great follow-up that requires even more complex and strict rule-based string parsing. You need to validate different formats (IPv4 vs. IPv6) and check multiple constraints, strengthening the skills needed for `atoi`."
+        },
+        {
+            "title": "Reverse Words in a String",
+            "url": "https://leetcode.com/problems/reverse-words-in-a-string/",
+            "reason": "This problem involves parsing a string to identify components (words) based on a delimiter (space), handling multiple spaces and leading/trailing spaces. This is directly related to the state-based parsing in `atoi`."
+        }
+    ],
+    "hard": [
+        {
+            "title": "Valid Number",
+            "url": "https://leetcode.com/problems/valid-number/",
+            "reason": "Often considered the 'final boss' of `atoi`-style problems. It requires validating a string against a complex set of rules for what constitutes a number (integers, floats, scientific notation). It's an excellent problem for practicing finite state machine design to manage the numerous edge cases."
+        },
+        {
+            "title": "Basic Calculator",
+            "url": "https://leetcode.com/problems/basic-calculator/",
+            "reason": "A major step up from `atoi`. It requires parsing a string containing a full arithmetic expression with parentheses, demanding a more sophisticated parsing strategy like using stacks to handle operator precedence and nested structures."
+        },
+        {
+            "title": "Basic Calculator II",
+            "url": "https://leetcode.com/problems/basic-calculator-ii/",
+            "reason": "Builds upon the `Basic Calculator` concept by adding multiplication and division, forcing a more robust implementation to handle operator precedence correctly. It's a perfect problem for mastering expression evaluation."
+        }
+    ]
+}

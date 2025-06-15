@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Regular Expression Matching Can Be Simple And Fast",
+        "url": "https://swtch.com/~rsc/regexp/regexp1.html",
+        "reason": "This article by Russ Cox is a seminal work on implementing regular expressions. It provides a masterclass that starts with the backtracking/recursive approach (common for this LeetCode problem) and explains its performance pitfalls. It then introduces the superior Nondeterministic Finite Automaton (NFA) simulation method, which is what the dynamic programming solution effectively implements. Reading this gives a deep, fundamental understanding of the computer science behind regex matching, far beyond a simple DP formula."
+    },
+    {
+        "title": "Princeton University COS 226 - Regular Expressions Lecture",
+        "url": "https://www.cs.princeton.edu/courses/archive/fall19/cos226/lectures/54RegularExpressions.pdf",
+        "reason": "These lecture slides from Sedgewick and Wayne's renowned algorithms course provide a formal, academic foundation for the problem. They explicitly connect regular expressions to Nondeterministic Finite Automata (NFAs) and show how to simulate an NFA to perform a match. This resource is invaluable for understanding the underlying state machine that the DP solution creates, offering clear diagrams and a step-by-step theoretical process that solidifies one's understanding."
+    },
+    {
+        "title": "Implementing Regular Expressions (CSE 373 - University of Washington)",
+        "url": "https://courses.cs.washington.edu/courses/cse373/19wi/files/sections/section09-regex-solutions.pdf",
+        "reason": "This is a solution guide from a university data structures and algorithms course, but it's exceptionally well-explained. It walks through implementing a regex matcher using an explicit NFA graph, based on the famous Thompson's Construction algorithm. It provides a different and more graphical perspective than the typical 2D DP table, helping to visualize the problem as a graph traversal. This builds intuition about the states and transitions involved in a match."
+    },
+    {
+        "title": "Recursive and Dynamic Programming Solution for Regular Expression Matching",
+        "url": "https://web.archive.org/web/20230308191223/https://www.byte-by-byte.com/regular-expression-matching/",
+        "reason": "This deep-dive blog post meticulously develops the solution from the ground up. It starts with a brute-force recursive approach and clearly explains the logic for each case (character match, '.', '*'). It then identifies the overlapping subproblems and shows precisely how to optimize the recursion into a dynamic programming solution with a 2D cache. Its strength lies in the very clear, step-by-step derivation of the DP recurrence, making it perfect for someone struggling with the transition from recursion to DP."
+    },
+    {
+        "title": "National University of Singapore - CS2040C Lecture on Regular Expression",
+        "url": "https://www.comp.nus.edu.sg/~stevenha/cs2040c/lectures/w12-dp-VI-edit-distance-regex.pdf",
+        "reason": "From a data structures and algorithms course at NUS, this set of lecture notes places the Regular Expression Matching problem in the broader context of other string-based DP problems, like Edit Distance. This comparison is extremely useful, as it helps you see the shared patterns and principles behind these problems. The slides provide a concise derivation of the DP state and transitions, making it an excellent summary and review resource after you have a basic grasp of the problem."
+    }
+]

@@ -1,0 +1,3 @@
+{
+    "analysis": "The core challenge lies in handling the '*' operator, which represents zero or more occurrences of the preceding element, creating multiple branching possibilities for matching. This structure, characterized by choices and overlapping subproblems (e.g., matching the rest of the string against the same pattern part), makes the problem a classic candidate for Dynamic Programming. Both a top-down recursive approach with memoization and a bottom-up tabular DP approach are effective, typically using a 2D table to store the results for subproblems `(s[i:], p[j:])`."
+}

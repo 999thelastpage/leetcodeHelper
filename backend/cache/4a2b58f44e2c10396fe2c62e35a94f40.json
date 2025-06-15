@@ -1,0 +1,53 @@
+{
+    "easy": [
+        {
+            "title": "167. Two Sum II - Input Array Is Sorted",
+            "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+            "reason": "This is a direct variation of Two Sum. The sorted input allows for an alternative O(1) space solution using the two-pointer technique, making it excellent for comparing different algorithmic trade-offs (time vs. space) for the same core problem."
+        },
+        {
+            "title": "217. Contains Duplicate",
+            "url": "https://leetcode.com/problems/contains-duplicate/",
+            "reason": "This problem is a simplified version of the hash table logic used in Two Sum. Instead of finding a complement, you're just checking for existence. It's a fundamental exercise in using a hash set for efficient lookups."
+        },
+        {
+            "title": "242. Valid Anagram",
+            "url": "https://leetcode.com/problems/valid-anagram/",
+            "reason": "This problem uses a hash map for frequency counting, a technique closely related to the one in Two Sum. It reinforces the idea of using a hash map to track information (character counts) about elements as you iterate through a collection."
+        }
+    ],
+    "medium": [
+        {
+            "title": "15. 3Sum",
+            "url": "https://leetcode.com/problems/3sum/",
+            "reason": "The classic follow-up to Two Sum. It requires extending the 'find a pair' logic to 'find a triplet'. The optimal solution often involves sorting the array and then applying a two-pointer approach (a variation of the Two Sum logic) for each element, forcing you to handle complexities like duplicate removal."
+        },
+        {
+            "title": "560. Subarray Sum Equals K",
+            "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+            "reason": "A brilliant and essential problem that applies the 'complement' pattern from Two Sum to prefix sums. You use a hash map to store counts of prefix sums, looking for `current_sum - k`. It's a more abstract and powerful application of the same core hash map strategy."
+        },
+        {
+            "title": "454. 4Sum II",
+            "url": "https://leetcode.com/problems/4sum-ii/",
+            "reason": "This problem demonstrates a powerful way to solve K-sum problems. Instead of nested loops, you split the four arrays into two pairs, compute all possible sums for the first pair and store them in a hash map, and then check for their complements using sums from the second pair. It's an elegant use of the Two Sum hash map pattern to avoid a higher-complexity solution."
+        }
+    ],
+    "hard": [
+        {
+            "title": "49. Group Anagrams",
+            "url": "https://leetcode.com/problems/group-anagrams/",
+            "reason": "This problem evolves from checking anagrams to grouping them. The challenge lies in creating a canonical representation (e.g., a sorted string or a character-count tuple) for each word to use as a key in a hash map. It tests your ability to use hash maps for grouping based on a computed property."
+        },
+        {
+            "title": "149. Max Points on a Line",
+            "url": "https://leetcode.com/problems/max-points-on-a-line/",
+            "reason": "This is a creative and difficult application of hash maps. For each point, you calculate the slopes to all other points. The hash map is used to count how many points share the same slope relative to the fixed point. It requires careful handling of edge cases like vertical lines and duplicate points and showcases how hash maps can solve complex geometry problems."
+        },
+        {
+            "title": "30. Substring with Concatenation of All Words",
+            "url": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
+            "reason": "A challenging problem that combines the sliding window technique with hash maps. It's like a 'Two Sum' on steroids, where you're not looking for a single number but a specific combination of words. It forces you to use hash maps to efficiently track the counts of words seen inside a sliding window."
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+[
+    {
+        "title": "CERT C Coding Standard: INT32-C. Ensure that operations on signed integers do not result in overflow",
+        "url": "https://wiki.sei.cmu.edu/confluence/display/c/INT32-C.+Ensure+that+operations+on+signed+integers+do+not+result+in+overflow",
+        "reason": "This resource from the Carnegie Mellon University Software Engineering Institute (SEI) frames the `atoi` problem in the context of software security and robustness. It uses string-to-integer conversion as a primary example of a situation where signed integer overflow can lead to serious vulnerabilities. Reading this helps a developer understand not just *how* to implement the clamping logic, but *why* it is critically important in professional, production-level code, moving beyond the goal of simply passing a LeetCode test."
+    },
+    {
+        "title": "Crafting a Safer `atoi` - ridiculousfish",
+        "url": "https://ridiculousfish.com/blog/posts/old-age-and-treachery.html",
+        "reason": "Written by a former Apple engineer, this blog post is a masterful critique of the `atoi` function's API design and its historical pitfalls. It delves into why `atoi` is inherently unsafe due to its inability to properly report errors (e.g., distinguishing between converting '0' and an invalid string). It provides invaluable context on software design principles and motivates the need for more robust functions like `strtol`. This helps a user think like a library designer, not just an algorithm implementer."
+    },
+    {
+        "title": "Source code of `strtol` in `dietlibc`",
+        "url": "https://github.com/ensc/dietlibc/blob/master/lib/strtol.c",
+        "reason": "Studying a real-world, production-quality implementation is an excellent way to learn. `dietlibc` is a C standard library known for its minimalism and clean code. Its implementation of `strtol` (a more powerful superset of `atoi`) is a masterclass in concise and correct handling of all edge cases: leading whitespace, optional signs, base detection, and, most importantly, overflow detection. Unlike a tutorial, this is battle-tested code that shows how to solve the problem efficiently and correctly."
+    },
+    {
+        "title": "CS 241, University of Illinois: System Programming - Lecture on C Strings",
+        "url": "https://courses.engr.illinois.edu/cs241/sp2012/lectures/20-c_strings.pdf",
+        "reason": "This set of university lecture slides (slides 25-34) places `atoi` within the broader academic context of C-style string manipulation and system programming. It discusses `atoi`, `atof`, and `strtol` together, explaining their differences and use cases from a low-level perspective. It's valuable for understanding the problem's foundations, such as how strings are represented in memory and how pointer arithmetic is used to parse them, which is a more fundamental approach than typically found in online tutorials."
+    },
+    {
+        "title": "James Aspnes' Notes on Data Structures: Parsing integers",
+        "url": "https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)DataStructures.html#Parsing_integers",
+        "reason": "This resource, part of a comprehensive set of notes for a Yale data structures course, provides a clear, academic breakdown of the logic for parsing integers. It focuses on the core challenge of accumulator-based parsing and explicitly details the pre-multiplication check for overflow (`n > INT_MAX / 10`). The explanation is rigorous and mathematical, making it an excellent resource for anyone who wants to understand the overflow check from first principles rather than just memorizing the formula."
+    }
+]

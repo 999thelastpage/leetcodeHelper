@@ -1,0 +1,53 @@
+{
+    "easy": [
+        {
+            "title": "Implement strStr()",
+            "url": "https://leetcode.com/problems/implement-strstr/",
+            "reason": "This is the most fundamental string matching problem. Before tackling the complexity of wildcards like '.' and '*', it's essential to master the basic algorithm for finding a simple substring within another. It provides the foundation for iterative comparison of two strings."
+        },
+        {
+            "title": "Valid Palindrome",
+            "url": "https://leetcode.com/problems/valid-palindrome/",
+            "reason": "While typically solved with two pointers, this problem reinforces the core skill of comparing characters at different positions in a string. This skill is fundamental to any string matching algorithm, including the character-by-character checks in regular expression matching."
+        },
+        {
+            "title": "Longest Common Prefix",
+            "url": "https://leetcode.com/problems/longest-common-prefix/",
+            "reason": "This problem involves matching characters at the same position across multiple strings. It helps you practice the logic of advancing through strings as long as characters match, a concept that is a building block for more complex pattern matching where you match prefixes of a string against a pattern."
+        }
+    ],
+    "medium": [
+        {
+            "title": "Longest Common Subsequence",
+            "url": "https://leetcode.com/problems/longest-common-subsequence/",
+            "reason": "This is a cornerstone dynamic programming problem for strings. It introduces the classic 2D DP table where `dp[i][j]` represents a solution for prefixes of two strings. Its structure is a simpler version of the DP approach used in Regular Expression Matching, making it an excellent prerequisite."
+        },
+        {
+            "title": "Interleaving String",
+            "url": "https://leetcode.com/problems/interleaving-string/",
+            "reason": "This problem uses a 2D DP approach that is structurally very similar to Regular Expression Matching. You build a boolean DP table `dp[i][j]` to determine if a valid interleaving exists using prefixes of two strings. It's great practice for setting up the DP state and transitions based on character matches."
+        },
+        {
+            "title": "Decode Ways",
+            "url": "https://leetcode.com/problems/decode-ways/",
+            "reason": "Although this is a 1D DP problem, it captures the critical concept of making choices. The number of ways to decode depends on grouping one or two digits, which is analogous to handling the '*' in regex, where you must choose between matching zero characters (ignoring the pattern part) or one more character (using the pattern part)."
+        }
+    ],
+    "hard": [
+        {
+            "title": "Wildcard Matching",
+            "url": "https://leetcode.com/problems/wildcard-matching/",
+            "reason": "This is the most similar problem to Regular Expression Matching. It also involves matching a string against a pattern with wildcards. However, the '*' wildcard has a different meaning (it matches any sequence of characters). Solving this problem tests your ability to adapt the DP logic to different rules, solidifying your grasp of the pattern."
+        },
+        {
+            "title": "Edit Distance",
+            "url": "https://leetcode.com/problems/edit-distance/",
+            "reason": "This is a canonical 2D string DP problem. The goal is to find the minimum number of edits to transform one string into another. The `dp[i][j]` state and recursive relations are a perfect example of the DP pattern used for Regular Expression Matching. Mastering Edit Distance makes complex string DP problems much more approachable."
+        },
+        {
+            "title": "Shortest Common Supersequence",
+            "url": "https://leetcode.com/problems/shortest-common-supersequence/",
+            "reason": "This problem is an extension of the Longest Common Subsequence problem. It requires not only filling out the DP table but also backtracking through it to construct the final string. This advanced skill of path reconstruction on a DP table is crucial for tackling harder variations of matching and sequence alignment problems."
+        }
+    ]
+}

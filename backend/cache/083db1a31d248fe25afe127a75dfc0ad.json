@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Princeton University - COS 226 - Symbol Tables (Lecture Slides)",
+        "url": "https://www.cs.princeton.edu/courses/archive/fall18/cos226/lectures/31SymbolTables.pdf",
+        "reason": "These are lecture slides from a fundamental Princeton computer science course. The resource is valuable because it places the Two Sum problem (referred to as '2-sum') in its proper academic context: as a classic application of symbol tables (hash tables). Instead of just providing a solution, it presents it as a case study to demonstrate the dramatic performance improvement of using hash tables over brute-force search (from quadratic to linear time). This helps in understanding the 'why' behind the optimal solution from a theoretical standpoint. See slides 23-26 for the direct discussion."
+    },
+    {
+        "title": "Jeff Erickson's Algorithms - Chapter 2.7: Two-SUM, 3-SUM, k-SUM",
+        "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/book/02-backtracking.pdf",
+        "reason": "This resource is a chapter from a highly respected, freely available algorithms textbook by a leading academic. It's exceptional because it situates the Two Sum problem as the base case for the more general and much harder 'k-SUM' problem. This provides a broader perspective, showing how the techniques used for Two Sum are foundational for solving a whole class of related problems. It discusses the sorting-based N log N solution and alludes to the hashing-based linear time solution, offering a rigorous analysis that a typical blog post would lack."
+    },
+    {
+        "title": "USACO Guide - Hashing Module",
+        "url": "https://usaco.guide/silver/hashing?lang=cpp",
+        "reason": "The USACO Guide is an elite training resource for aspiring competitive programmers. This module on hashing is useful because it teaches the concept as a reusable pattern rather than a one-off trick for a single problem. It presents Two Sum (and its variations) as a canonical example of when to apply hashing. The page provides a concise explanation, sample code in multiple languages (C++, Java, Python), and a curated list of practice problems that use the same pattern. It's perfect for someone wanting to move from just solving a problem to recognizing the underlying technique in different contexts."
+    },
+    {
+        "title": "Coding Delight - A Visual Guide to the Two Sum Problem",
+        "url": "https://www.codingdelight.com/two-sum-problem/",
+        "reason": "While many blogs explain the Two Sum problem, this one from the less-mainstream 'Coding Delight' blog stands out for its exceptional use of visuals. It provides clear, step-by-step diagrams that illustrate the brute-force approach first, making its inefficiency obvious. It then contrasts this with a visual walkthrough of the hash map solution, showing exactly how the map is built and queried at each step. For visual learners, this resource can provide an 'aha!' moment that text-heavy explanations might fail to deliver."
+    },
+    {
+        "title": "The Architecture of Open Source Applications - A Hash Table",
+        "url": "https://aosabook.org/en/500L/a-hash-table.html",
+        "reason": "This resource is a deep dive into the 'how' and 'why' the optimal Two Sum solution works. Instead of just using a hash table, this chapter from the '500 Lines or Less' book teaches you how to build a simple, functional hash table from scratch in Python. By understanding the internal mechanics of hashing, collisions, and key-value storage, you gain a fundamental appreciation for why the hash table provides an average O(1) lookup time. This is invaluable for moving beyond rote memorization of the solution to a true, first-principles understanding of the data structure that makes it possible."
+    }
+]
