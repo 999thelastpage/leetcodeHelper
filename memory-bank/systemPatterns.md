@@ -5,34 +5,44 @@
 The system follows a client-server architecture. The key change is the move from a single backend analysis endpoint to a **parallel, multi-endpoint architecture**. The frontend first scrapes the problem data and then makes multiple, concurrent requests to the backend for each piece of the analysis.
 
 graph TD
+    %% Define external services clearly first
+    subgraph "External Services"
+        LC_API["LeetCode GraphQL API"]
+        LLM_API["Gemini LLM API"]
+    end
     subgraph "User Interaction"
         User[User] --> FE[Frontend UI]
     end
-
     subgraph "Application Services"
-        FE -->|1. Scrape Request (URL)| ScrapeEP[/api/scrape]
+        %% Define API Endpoints
+        ScrapeEP[/api/scrape/]
+        AnalysisEP[/api/analysis/]
+        ExplanationEP[/api/explanation/]
+        SolutionsEP[/api/solutions/]
+        ResourcesEP[/api/resources/]
+        SimilarEP[/api/similar-problems/]
+        ChatEP[/api/chat/]
+        %% Scrape Flow
+        FE -->|1. Scrape Request URL| ScrapeEP
+        ScrapeEP -->|Queries| LC_API
+        LC_API -->|Problem Data| ScrapeEP
         ScrapeEP -->|Problem Data| FE
-
-        subgraph "Parallel LLM Calls"
-            direction LR
-            FE -->|2a. Analysis Request| AnalysisEP[/api/analysis]
-            FE -->|2b. Explanation Request| ExplanationEP[/api/explanation]
-            FE -->|2c. Solutions Request| SolutionsEP[/api/solutions]
-            FE -->|2d. Resources Request| ResourcesEP[/api/resources]
-            FE -->|2e. Similar Problems Request| SimilarEP[/api/similar-problems]
-            FE -->|2f. Chat Request| ChatEP[/api/chat]
-        end
-
-        subgraph "Backend Services"
-            ScrapeEP --> LC_API[LeetCode GraphQL API]
-            AnalysisEP --> LLM_API[Gemini LLM API]
-            ExplanationEP --> LLM_API
-            SolutionsEP --> LLM_API
-            ResourcesEP --> LLM_API
-            SimilarEP --> LLM_API
-            ChatEP --> LLM_API
-        end
-
+        %% Parallel LLM Calls Flow
+        %% Requests from FE
+        FE -->|2a. Analysis Request| AnalysisEP
+        FE -->|2b. Explanation Request| ExplanationEP
+        FE -->|2c. Solutions Request| SolutionsEP
+        FE -->|2d. Resources Request| ResourcesEP
+        FE -->|2e. Similar Problems Request| SimilarEP
+        FE -->|2f. Chat Request| ChatEP
+        %% Calls from Endpoints to LLM API
+        AnalysisEP -->|Request| LLM_API
+        ExplanationEP -->|Request| LLM_API
+        SolutionsEP -->|Request| LLM_API
+        ResourcesEP -->|Request| LLM_API
+        SimilarEP -->|Request| LLM_API
+        ChatEP -->|Request| LLM_API
+        %% Responses from Endpoints back to FE
         AnalysisEP -->|Analysis Data| FE
         ExplanationEP -->|Explanation Data| FE
         SolutionsEP -->|Solutions Data| FE
@@ -40,12 +50,6 @@ graph TD
         SimilarEP -->|Similar Problems Data| FE
         ChatEP -->|Chat Data| FE
     end
-
-    subgraph "External Services"
-        LC_API
-        LLM_API
-    end
-```
 
 ## 2. Key Components and Responsibilities
 
