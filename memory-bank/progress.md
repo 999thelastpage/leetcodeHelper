@@ -12,11 +12,7 @@
 *   **Interactive Chat Widget:** The chat widget is now fully interactive and displays Markdown-formatted responses from the LLM.
 *   **Data Flow:** The frontend correctly receives data for all sections from the backend. This has been verified with console logs.
 
-## 3. What's Left to Build (Current Known Issues)
-
-*   **Git Repository Corruption:** The `.git` directory is corrupted, which prevents the `attempt_completion` tool from working. This needs to be resolved.
-
-## 4. Evolution of Project Decisions (Post-Refactoring Summary)
+## 3. Evolution of Project Decisions (Post-Refactoring Summary)
 
 *   **Initial Architecture:** A single backend endpoint (`/api/analyze_problem`) triggered a monolithic LLM call to generate all content at once.
     *   **Problem:** This was brittle. A failure in any part of the LLM's response would cause the entire request to fail. It also led to poor perceived performance as the user had to wait for everything to be generated.
